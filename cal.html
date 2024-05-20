@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Calculator</title>
+  <link rel="stylesheet" href="css/cal.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/boostrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+</head>
+<class="bg-white text-center d-flex h-100">
+<div class="container d-flex p-3 mx-auto w-100 flex-column">
+     <header class="mb-auto">
+       <div class="float-md-start fw-bold fs-5">Shipping calculator</div>
+       <a class="nav-link active" href="#">Last Update 2024-05-20</a>
+       <nav class="nav justify-content-center float-md-end">
+         <a class="nav-link active" href="#">Home</a>
+         <a class="nav-link" href="./index.html" target="_blank">Country list</a>
+         <a class="nav-link" href="#" target="_blank">Contact</a>
+         <div class="nav-link">
+ 
+           <div class="form-check form-switch">
+             <input type="checkbox" class="form-check-input" id="darkSwitch">
+             <label class="custom-control-label" for="darkSwitch"></label>
+             
+           </div>
+           <script src="js/dark-mode-switch.min.js"></script>
+ 
+         </div>
+       </nav>
+     </header>
+   </div>
+   <hr width="100%" color="green" size="5px"/>
+<body onload="setCountry()">
+<br><br>
+<div class="Calcontainer">
+  <h1>SL Shipping Calculator</h1>
+  <br>
+  <hr width="100%" color="green" size="5px"/>
+  <form id="calculator" onsubmit="calculateFee(); return false;">
+    <label for="fromCountry">From Country:</label>
+    <input type="text" id="fromCountry" name="fromCountry" value="Sri Lanka" readonly>
+    
+    <label for="toCountry">To Country:</label>
+    <input list="countryList" id="toCountry" name="toCountry" required>
+    <datalist id="countryList"></datalist>
+    
+    <label for="weight">Weight (g):</label>
+    <input type="number" id="weight" name="weight" required>
+    
+    <label for="isRegistered">Registered Post:</label>
+    <input type="checkbox" id="isRegistered" name="isRegistered">
+    
+    <label for="expense">Expense (LKR):</label>
+    <input type="number" id="expense" name="expense">
+    
+    <label for="expected_profit">Expected Profit (LKR):</label>
+    <input type="number" id="expected_profit" name="expected_profit">
+    
+    <label for="currency">Currency:</label>
+    <select id="currency" name="currency">
+      <option value="0">LKR</option>
+      <!-- Add more currencies as needed -->
+    </select>
+    
+    <button type="submit">Calculate</button>
+  </form>
+  
+  <div id="summary"></div>
+  <div id="totalFee"></div>
+  <div id="itemPrice"></div>
+</div>
+<script src="js/calc.js"></script>
+
+</body>
+</html>
